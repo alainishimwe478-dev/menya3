@@ -1,0 +1,46 @@
+{
+  "title": "🌱 Menya Leaf AI",
+  "subtitle": "Select a plant to view farming information",
+  "login": {
+    "title": "Welcome Back",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "noAccount": "Don't have an account? Sign Up",
+    "error": "Error",
+    "fillFields": "Please fill all fields",
+    "invalidCredentials": "Invalid email or password"
+  },
+  "signup": {
+    "title": "Create Account",
+    "name": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "signup": "Sign Up",
+    "haveAccount": "Already have an account? Login",
+    "error": "Error",
+    "fillFields": "Please fill all fields",
+    "passwordMismatch": "Passwords do not match",
+    "success": "Success",
+    "accountCreated": "Account created successfully"
+  },
+  "plants": {
+    "maize": {
+      "name": "Maize",
+      "info": "Maize grows well in fertile, well-drained soil. Plant at the beginning of the rainy season. Common problems include fall armyworm."
+    },
+    "cassava": {
+      "name": "Cassava",
+      "info": "Cassava is drought-resistant. It grows well in sandy soil. Harvest after 8–12 months."
+    },
+    "sweetPotato": {
+      "name": "Sweet Potato",
+      "info": "Sweet potato prefers warm climates and loose soil. Harvest after 3–5 months."
+    },
+    "vegetables": {
+      "name": "Green Vegetables",
+      "info": "Green vegetables need regular watering and organic manure. Harvest frequently for better yield."
+    }
+  }
+}

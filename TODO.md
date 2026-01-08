@@ -1,0 +1,23 @@
+- [x] Remove 'Login' and 'SignUp' from RootStackParamList in types.ts
+- [x] Update App.tsx: remove imports for LoginScreen and SignUpScreen, remove Login screen from navigator, change initialRouteName to 'Dashboard'
+- [x] Delete screens/LoginScreen.tsx
+- [x] Delete screens/SignUpScreen.tsx
+- [x] Remove 'login' section from locales/en.json, locales/fr.json, locales/rw.json (not present)
+- [x] Add Dashboard to RootStackParamList
+- [x] Create screens/DashboardScreen.tsx
+
+New Features Implementation:
+- [ ] Add authentication: Create LoginScreen.tsx and SignUpScreen.tsx
+- [ ] Update types.ts: Add Login and SignUp to RootStackParamList
+- [ ] Update App.tsx: Add Login and SignUp screens to navigator, set initial to Login if not authenticated
+- [ ] Update locales: Add login/signup texts to en.json, fr.json, rw.json
+- [ ] Enhance ResultScreen: Add mock AI analysis results (plant type, disease, severity, care)
+- [ ] Expand DetailScreen: Add disease guidance, symptom checker, treatments
+- [ ] Add offline mode: Store plant data locally using AsyncStorage
+- [ ] Add notifications: Implement reminders for plant care
+- [ ] Add community: Create CommunityScreen for forum/tips
+- [ ] Add analytics: Track scans over time
+- [ ] Add settings: Create SettingsScreen for language, theme, profile
+- [ ] Update navigation: Add new screens to stack
+- [ ] Install additional dependencies if needed (e.g., AsyncStorage, notifications)
+- [ ] Test the app

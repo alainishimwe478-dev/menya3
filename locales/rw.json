@@ -1,0 +1,46 @@
+{
+  "title": "🌱 Menya Leaf AI",
+  "subtitle": "Hitamo igiti kugira ngo ubone amakuru y'ubuhinzi",
+  "login": {
+    "title": "Murakaza neza",
+    "email": "Imeyili",
+    "password": "Ijambo ry'ibanga",
+    "login": "Injira",
+    "noAccount": "Nta konti ufite? Iyandikishe",
+    "error": "Ikosa",
+    "fillFields": "Uzuzamo ibibanza byose",
+    "invalidCredentials": "Imeyili cyangwa ijambo ry'ibanga si ryo"
+  },
+  "signup": {
+    "title": "Kora konti",
+    "name": "Amazina yose",
+    "email": "Imeyili",
+    "password": "Ijambo ry'ibanga",
+    "confirmPassword": "Emeza ijambo ry'ibanga",
+    "signup": "Iyandikishe",
+    "haveAccount": "Ufite konti? Injira",
+    "error": "Ikosa",
+    "fillFields": "Uzuzamo ibibanza byose",
+    "passwordMismatch": "Amagambo y'ibanga ntabwo ahura",
+    "success": "Byagenze neza",
+    "accountCreated": "Konti yashizweho neza"
+  },
+  "plants": {
+    "maize": {
+      "name": "Ibigori",
+      "info": "Ibigori bikura neza mu butaka bwiza butanduye. Bitera mu ntangiriro y'imvura. Ibibazo bisanzwe birimo inyenzi z'igitondo."
+    },
+    "cassava": {
+      "name": "Imyumbati",
+      "info": "Imyumbati ihangana n'umuhindu. Ikura neza mu mbuga. Ikusanywa nyuma y'amezi 8-12."
+    },
+    "sweetPotato": {
+      "name": "Ibijumba",
+      "info": "Ibijumba bikunda ubushyuhe n'ubutaka bworoheje. Ikusanywa nyuma y'amezi 3-5."
+    },
+    "vegetables": {
+      "name": "Imboga",
+      "info": "Imboga isaba kuhira buri gihe n'ifumbire y'umwimerere. Ikusanywa kenshi kugira ngo umusaruro ube mwiza."
+    }
+  }
+}

@@ -7,18 +7,52 @@ import {
   StyleSheet,
   Dimensions,
   Alert,
+  View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 const screenWidth = Dimensions.get('window').width;
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Detail'>;
 
+// Mock disease guidance based on plant
+const getDiseaseGuidance = (plantKey: string) => {
+  const guidances: Record<string, any> = {
+    maize: {
+      commonDiseases: ['Fall Armyworm', 'Maize Streak Virus'],
+      symptoms: 'Holes in leaves, yellowing, stunted growth.',
+      treatments: 'Use organic pesticides, crop rotation.',
+    },
+    cassava: {
+      commonDiseases: ['Cassava Mosaic Disease', 'Cassava Brown Streak Disease'],
+      symptoms: 'Mosaic patterns on leaves, brown streaks.',
+      treatments: 'Use resistant varieties, remove infected plants.',
+    },
+    sweetPotato: {
+      commonDiseases: ['Sweet Potato Virus Disease', 'Fusarium Wilt'],
+      symptoms: 'Yellowing leaves, wilting.',
+      treatments: 'Crop rotation, fungicides.',
+    },
+    vegetables: {
+      commonDiseases: ['Aphid Infestation', 'Powdery Mildew'],
+      symptoms: 'Sticky residue, white powdery coating.',
+      treatments: 'Neem oil, beneficial insects.',
+    },
+  };
+  return guidances[plantKey] || { commonDiseases: [], symptoms: 'N/A', treatments: 'Consult expert.' };
+};
+
 export default function DetailScreen({ route, navigation }: Props) {
   const { plant } = route.params;
+  const { t } = useTranslation();
   const [image, setImage] = useState<string | null>(null);
+  const [showGuidance, setShowGuidance] = useState(false);
+
+  const guidance = getDiseaseGuidance(Object.keys(plant).find(key => plant[key as keyof typeof plant] === plant.name)?.toLowerCase() || '');
 
   // Request permissions
   useEffect(() => {
@@ -74,13 +108,43 @@ export default function DetailScreen({ route, navigation }: Props) {
       <Text style={styles.title}>{plant.name}</Text>
       <Text style={styles.infoText}>{plant.info}</Text>
 
-      <TouchableOpacity style={styles.button} onPress={pickImage}>
-        <Text style={styles.buttonText}>Upload Plant Image from Gallery</Text>
+      <TouchableOpacity
+        style={styles.guidanceButton}
+        onPress={() => setShowGuidance(!showGuidance)}
+      >
+        <Text style={styles.guidanceButtonText}>
+          {showGuidance ? 'Hide Disease Guidance' : 'Show Disease Guidance'}
+        </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={takePhoto}>
-        <Text style={styles.buttonText}>Take Photo of Plant</Text>
-      </TouchableOpacity>
+      {showGuidance && (
+        <View style={styles.guidanceContainer}>
+          <Text style={styles.guidanceTitle}>Disease Guidance</Text>
+          <Text style={styles.guidanceText}>
+            <Text style={styles.bold}>Common Diseases:</Text> {guidance.commonDiseases.join(', ')}
+          </Text>
+          <Text style={styles.guidanceText}>
+            <Text style={styles.bold}>Symptoms:</Text> {guidance.symptoms}
+          </Text>
+          <Text style={styles.guidanceText}>
+            <Text style={styles.bold}>Treatments:</Text> {guidance.treatments}
+          </Text>
+        </View>
+      )}
+
+      <View style={styles.uploadContainer}>
+        <TouchableOpacity style={styles.uploadCard} onPress={pickImage}>
+          <Text style={styles.plantIcon}>{plant.icon}</Text>
+          <MaterialIcons name="photo-library" size={30} color="#4caf50" />
+          <Text style={styles.uploadText}>Upload from Gallery</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.uploadCard} onPress={takePhoto}>
+          <Text style={styles.plantIcon}>{plant.icon}</Text>
+          <MaterialIcons name="camera-alt" size={30} color="#4caf50" />
+          <Text style={styles.uploadText}>Take Photo</Text>
+        </TouchableOpacity>
+      </View>
 
       {image && (
         <Image
@@ -105,6 +169,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     alignItems: 'center',
+    backgroundColor: '#e8f5e8',
+    flex: 1,
   },
   title: {
     fontSize: 24,
@@ -136,5 +202,34 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '600',
+  },
+  uploadContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginBottom: 20,
+  },
+  uploadCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 20,
+    alignItems: 'center',
+    width: '45%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  uploadText: {
+    marginTop: 10,
+    fontSize: 14,
+    color: '#333',
+    textAlign: 'center',
+    fontWeight: '500',
+  },
+  plantIcon: {
+    fontSize: 40,
+    marginBottom: 5,
   },
 });

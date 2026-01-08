@@ -1,25 +1,34 @@
 {
-    "expo": {
-        "name": "Menya",
-        "slug": "menya",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "userInterfaceStyle": "light",
-        "assetBundlePatterns": [
-            "**/*"
-        ],
-        "ios": {
-            "supportsTablet": true
-        },
-        "android": {},
-        "plugins": [
-            [
-                "expo-image-picker",
-                {
-                    "photosPermission": "The app accesses your photos to let you upload plant images for analysis.",
-                    "cameraPermission": "The app accesses your camera to let you take photos of plants for analysis."
-                }
-            ]
-        ]
+  "expo": {
+    "name": "Menya",
+    "slug": "menya",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you upload plant images for analysis.",
+          "cameraPermission": "The app accesses your camera to let you take photos of plants for analysis."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "68805dc0-cce8-4ee1-8ad7-6f318f2ea2b4"
+      }
     }
+  }
 }

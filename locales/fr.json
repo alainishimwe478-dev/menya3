@@ -1,0 +1,46 @@
+{
+  "title": "🌱 Menya Leaf AI",
+  "subtitle": "Sélectionnez une plante pour voir les informations agricoles",
+  "login": {
+    "title": "Bienvenue",
+    "email": "Email",
+    "password": "Mot de passe",
+    "login": "Se connecter",
+    "noAccount": "Pas de compte ? S'inscrire",
+    "error": "Erreur",
+    "fillFields": "Veuillez remplir tous les champs",
+    "invalidCredentials": "Email ou mot de passe invalide"
+  },
+  "signup": {
+    "title": "Créer un compte",
+    "name": "Nom complet",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "signup": "S'inscrire",
+    "haveAccount": "Déjà un compte ? Se connecter",
+    "error": "Erreur",
+    "fillFields": "Veuillez remplir tous les champs",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "success": "Succès",
+    "accountCreated": "Compte créé avec succès"
+  },
+  "plants": {
+    "maize": {
+      "name": "Maïs",
+      "info": "Le maïs pousse bien dans un sol fertile et bien drainé. Plantez au début de la saison des pluies. Problèmes courants incluent l'armée de nuit."
+    },
+    "cassava": {
+      "name": "Manioc",
+      "info": "Le manioc est résistant à la sécheresse. Il pousse bien dans le sable. Récoltez après 8–12 mois."
+    },
+    "sweetPotato": {
+      "name": "Patate douce",
+      "info": "La patate douce préfère les climats chauds et le sol meuble. Récoltez après 3–5 mois."
+    },
+    "vegetables": {
+      "name": "Légumes verts",
+      "info": "Les légumes verts ont besoin d'arrosage régulier et de fumier organique. Récoltez fréquemment pour un meilleur rendement."
+    }
+  }
+}
